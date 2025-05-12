@@ -1,0 +1,85 @@
+body {
+    font-family: 'Playfair Display', serif;
+    background-image: url('https://cepanaf.edomex.gob.mx/sites/cepanaf.edomex.gob.mx/files/images/WhatsApp%20Image%202022-06-28%20at%2010_56_21%20AM.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background: #f99; */
+}
+
+h1 {
+    text-align: center;
+    margin: 2rem;
+    color: #eba8dc;
+    font-size: 100px;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0, 0.46);
+     background-color: rgba(139, 230, 233, 0.3); /* amarillo claro con 30% de opacidad */
+    padding: 0.2rem 1rem;
+    border-radius: 2px;
+    display: inline-block;
+}
+
+h2 {
+    text-align: center;
+    margin: 2rem;
+    color: #eba8dc;
+    font-size: 50px;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0, 0.46);
+    background-color: rgba(139, 230, 233, 0.3); /* amarillo claro con 30% de opacidad */
+    padding: 0.2rem 1rem;
+    border-radius: 2px;
+    display: inline-block;
+  }
+
+.facil {
+    padding: 40px 80px;
+    background-color: #b969c9;
+    color: white;
+    font-size: 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .facil:hover {
+    background-color: #12e635;
+  }
+  .facil:active {
+    background-color: #3e8e8a;
+  }
+  div.center {
+    text-align: center;
+  }
+  .medio {
+    padding: 40px 80px;
+    background-color: #b969c9;
+    color: rgb(246, 246, 250);
+    font-size: 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .medio:hover {
+    background-color: #f3e419;
+  }
+  .medio:active {
+    background-color: #fc0909;
+  }
+
+  .dificil {
+    padding: 40px 80px;
+    background-color: #b969c9;
+    color: rgb(243, 245, 245);
+    font-size: 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .dificil:hover {
+    background-color: #bd0404;
+  }
+  .dificil:active {
+    background-color: #0852f0;
+  }
+
+
+  
+  

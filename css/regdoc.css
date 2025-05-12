@@ -1,0 +1,60 @@
+body {
+    font-family: 'Playfair Display', serif;
+    background-image: url('https://www.shutterstock.com/image-vector/big-collection-traditional-elements-mexican-600nw-2444505359.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background: #f99; */
+}
+.enviar {
+    padding: 50px 60px;
+    background-color: #817180;
+    color: white;
+    font-size: 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .enviar:hover {
+    background-color: #d80e0e;
+  }
+  .enviar:active {
+    background-color: #2348c2;
+  }
+  .volver1 {
+    padding: 40px 60px;
+    background-color: #40c940c0;
+    color: rgb(250, 246, 246);
+    font-size: 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .volver1:hover {
+    background-color: #40c940c0;
+  }
+  .volver1:active {
+    background-color: #40c940c0;
+  }
+  h1 {
+    text-align: center;
+    margin: 2rem auto;
+    color: #236363;
+    font-size: 35px;
+    font-family: 'Playfair Display', serif;
+    text-shadow: 2px 2px 2px#5e6d6d(10, 10, 10);
+    background-color: rgba(139, 230, 233, 0.3); /* amarillo claro con 30% de opacidad */
+padding: 0.2rem 1rem;
+border-radius: 5px;
+display: inline-block;
+  }
+  h2 {
+    text-align: center;
+    margin: 2rem auto;
+    color: #236363;
+    font-size: 20px;
+    font-family: 'Courier New', monospace;
+    background-color: rgba(139, 230, 233, 0.3); /* amarillo claro con 30% de opacidad */
+padding: 0.2rem 1rem;
+border-radius: 5px;
+display: inline-block;
+  }

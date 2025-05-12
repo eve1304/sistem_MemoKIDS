@@ -1,0 +1,44 @@
+body {
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    position: relative;
+}
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://s0.smartresize.com/wallpaper/907/420/HD-wallpaper-quetzalcoatl-red-fantasy-green-feather-simone-torcasio-aztec-snake-dragon-thumbnail.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.6; /* Ajusta la transparencia aquí */
+    z-index: -1; /* Manda la imagen al fondo */
+}
+h1 {
+    text-align: center;
+    margin: 2rem auto;
+    color: #0e0d0d;
+    font-size: 40px;
+    font-family: 'Bangers', cursive;
+   background-color: rgba(143, 145, 145, 0.3); /* amarillo claro con 30% de opacidad */
+    padding: 0.2rem 1rem;
+    border-radius: 5px;
+    display: inline-block;
+  }
+  h2 {
+    text-align: center;
+    margin: 2rem auto;
+    color: #111111;
+    font-size: 20px;
+    font-family: 'Bangers', cursive;
+    background-color: #b0b3b2;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  display: inline-block;
+  }
+  

@@ -1,0 +1,33 @@
+body {
+    font-family: 'Playfair Display', serif;
+    background-image: url('https://www.shutterstock.com/shutterstock/photos/2444505353/display_1500/stock-vector-ornate-ethnic-mexican-embroidery-otomi-seamless-pattern-with-birds-animals-and-flowers-on-black-2444505353.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background: #f99; */
+}
+
+h1 {
+    text-align: center;
+    margin: 2rem;
+    color: #94b12c;
+    font-size: 80px;
+    background-color: #a1dbc0;
+    padding: 1.5rem 1rem;
+    border-radius: 10px;
+    display: inline-block;
+}
+.volver {
+    padding: 40px 80px;
+    background-color: #a1dbc0;
+    color: #94b12c;
+    font-size: 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .volver:hover {
+    background-color: #05ee38;
+  }
+  .volver:active {
+    background-color: #e4bc0ade;
+  }

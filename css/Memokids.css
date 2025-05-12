@@ -1,0 +1,61 @@
+body {
+    font-family: 'Playfair Display', serif;
+    background-image: url('https://www.shutterstock.com/shutterstock/photos/2444505357/display_1500/stock-vector-ornate-ethnic-mexican-embroidery-otomi-seamless-pattern-with-birds-animals-and-flowers-on-white-2444505357.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background: #f99; */
+}
+
+h1 {
+    text-align: center;
+    margin: 2rem auto;
+    color: #2c3e50;
+    font-size: 80px;
+    text-shadow: 2px 2px 2px rgba(8, 44, 245, 0.46);
+    background-color: #d3f8f3; /* Resaltado tipo marcador amarillo */
+padding: 0.5rem 2rem;
+border-radius: 999px;          /* Espacio interno para que el fondo se vea bien */
+display: inline-block;     /* Para que el fondo se ajuste al texto y no a todo el ancho */
+  } 
+h2 {
+  text-align: center;
+  margin: 2rem;
+  color: #8e02c5;
+  font-size: 40px;
+  text-shadow: 2px 2px 2px rgb(0, 0, 0, 0.46);
+}
+h3 {
+  text-align: center;
+  margin: 2rem auto;
+  color: #2c3e50;
+  font-size: 30px;
+  text-shadow: 2px 2px 2px rgba(8, 44, 245, 0.46);
+  background-color: #d3f8f3;
+padding: 0.5rem 1rem;
+border-radius: 20px;
+display: inline-block;
+}
+.admin {
+  padding: 20px 30px;
+  background-color: #9a90f7;
+  color: rgb(26, 16, 16);
+  font-size: 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.usuario {
+  padding: 20px 30px;
+  background-color: #9a90f7;
+  color: rgb(15, 14, 1);
+  font-size: 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+  .volver:hover {
+    background-color: #c309c9;
+  }
+  .volver:active {
+    background-color: #c309c9;
+  }

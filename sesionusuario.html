@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar sesión</title>
+
+  <!-- Fuentes de Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="./css/sesionusuario.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Playfair Display', serif;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+      flex-direction: column;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+      width: 100%;
+    }
+
+    li {
+      float: left;
+    }
+
+    li a {
+      display: block;
+      color: white;
+      font-size: 1.2rem;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    li a:hover {
+      background-color: #111;
+    }
+
+
+    form {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 90%;
+      max-width: 400px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 0.8rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    button {
+      padding: 0.8rem 1.5rem;
+      margin: 0.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      background-color: #6c8ea4;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s;
+    }
+
+    button:hover {
+      background-color: #4a6fa5;
+      transform: scale(1.05);
+    }
+    /* Responsive para móviles */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+  </style>
+
+  <script>
+    function mostrarError() {
+      alert("Usuario incorrecto, intente de nuevo");
+    }
+  </script>
+</head>
+<body>
+
+  <!-- Encabezado -->
+  <h1>Inicia sesión como usuario</h1>
+
+  <!-- Formulario de inicio de sesión -->
+  <form action="procesar_login.php" method="POST">
+    <label for="nombredelacaja">
+      <strong>Usuario:</strong>
+    </label>
+    <input type="text" id="nombredelacaja" name="nombredelacaja" required>
+
+    <button type="submit" name="iniciar" class="iniciar">Iniciar sesión</button>
+  </form>
+
+  <!-- Opciones adicionales -->
+  <h3>
+    ¿Eres nuevo?<br>Crea una cuenta ahora:
+    <br><br>
+    <a href="registroalum.html">
+      <button class="registro">Regístrate</button>
+    </a>
+    <br><br>
+    <a href="index.html">
+      <button class="volver">Volver</button>
+    </a>
+  </h3>
+
+</body>
+</html>

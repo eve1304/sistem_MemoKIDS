@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&family=Rubik+Doodle+Triangles&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/regdoc.css">
+    <title>Formulario PHP</title>
+    <style>
+        * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Playfair Display', serif;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+      flex-direction: column;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+      width: 100%;
+    }
+
+    li {
+      float: left;
+    }
+
+    li a {
+      display: block;
+      color: white;
+      font-size: 1.2rem;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    li a:hover {
+      background-color: #111;
+    }
+    form {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 90%;
+      max-width: 400px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 0.8rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    /* Responsive para móviles */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+        body {
+            font-family: 'Cambria', sans-serif;
+            background-color: #f9f9f9;
+            color: #333; /* Cambiar el color de las letras */
+        }
+
+        form {
+            margin-top: 50px;
+        }
+
+        h1 {
+            color: #236363; /* Color para el título */
+        }
+
+        label {
+            text-align: center;
+    margin: 2rem auto;
+    color: #236363;
+    font-size: 20px;
+    font-family: 'Courier New', monospace;
+    background-color: rgba(139, 230, 233, 0.3); /* amarillo claro con 30% de opacidad */
+padding: 0.2rem 1rem;
+border-radius: 5px;
+display: inline-block;
+        }
+
+        .volver1 {
+            padding: 15px 30px;
+    background-color: #40c940c0;
+    color: rgb(250, 246, 246);
+    font-size: 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+        }
+
+        .volver1:hover {
+            background-color: #40c940c0; /* Fondo más oscuro al pasar el cursor */
+        }
+    </style>
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <h1>Registro de Docentes...</h1>
+        <form id="docentesForm">
+           <h2><label for="nombre">Nombre:</label></h2>
+            <input type="text" id="nombre" name="nombre" required><br><br>
+            <h2><label for="apellidos">Apellidos:</label></h2>
+            <input type="text" id="apellidos" name="apellidos" required><br><br>
+            <h2><label for="edad">Edad:</label></h2>
+            <input type="number" id="edad" name="edad" required><br><br>
+            <h2><label for="grado">Grado:</label></h2>
+            <input type="number" id="grado" name="grado" required><br><br>
+            <h2><label for="grupo">Grupo:</label></h2>
+            <input type="text" id="grupo" name="grupo" required><br><br>
+            <h2><label for="contraseña">Contraseña:</label></h2>
+            <input type="text" id="contraseña" name="contraseña" required><br><br>
+            <button type="submit" class="btn btn-success">Enviar</button>
+        </form>
+    </div>
+
+    <script>
+        // Manejar el envío del formulario con AJAX
+        $(document).ready(function () {
+            $("#docentesForm").submit(function (e) {
+                e.preventDefault(); // Evitar la recarga de la página
+                
+                // Serializar datos del formulario
+                var datos = $(this).serialize();
+                
+                // Enviar datos mediante AJAX
+                $.ajax({
+                    url: "recibird.php",
+                    type: "POST",
+                    data: datos,
+                    success: function (response) {
+                        // Mostrar el mensaje de éxito
+                        swal("¡Éxito!", response, "success");
+
+                        // Limpiar el formulario
+                        $("#docentesForm")[0].reset();
+                    },
+                    error: function () {
+                        swal("Error", "Ocurrió un problema al enviar los datos", "error");
+                    }
+                });
+            });
+        });
+    </script> <div style="text-align: center;">
+   <br><br> <a href=".\sesionadmin.html">
+        <button class="volver1">Volver</button>
+    </a></div>
+</body>
+
+</html>

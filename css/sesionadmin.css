@@ -1,0 +1,71 @@
+body {
+    font-family: 'Playfair Display', serif;
+    background-image: url('https://www.shutterstock.com/image-vector/mexican-otomi-embrodery-seamless-pattern-260nw-2278562191.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background: #f99; */
+}
+
+h1 {
+  text-align: center;
+  margin: 2rem auto;
+  color: #240a6d;
+  font-size: 50px;
+  background-color: rgba(245, 185, 222, 0.3); /* amarillo claro con 30% de opacidad */
+  padding: 0.5rem 1rem;
+border-radius: 20px;
+display: inline-block;
+}
+h2 {
+  text-align: center;
+  margin: 2rem;
+  color: #240a6d;
+  font-size: 30px;
+   background-color: rgba(245, 185, 222, 0.3); /* amarillo claro con 30% de opacidad */
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  display: inline-block;
+}
+h3 {
+  text-align: center;
+  margin: 2rem;
+  color: #240a6d;
+  font-size: 30px;
+  background-color: rgba(245, 185, 222, 0.3); /* amarillo claro con 30% de opacidad */
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  display: inline-block;
+}
+.iniciar {
+  padding: 20px 30px;
+  background-color: #5edfb8;
+  color: rgb(8, 8, 8);
+  font-size: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.registro{
+  padding: 20px 30px;
+  background-color: #911f37;
+  color: rgb(69, 241, 241);
+  font-size: 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.volver{
+  padding: 20px 30px;
+  background-color: #942222;
+  color: rgb(69, 241, 241);
+  font-size: 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+  .volver:hover {
+    background-color: #942222;
+  }
+  .volver:active {
+    background-color: #942222;
+  }

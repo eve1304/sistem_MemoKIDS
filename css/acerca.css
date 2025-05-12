@@ -1,0 +1,21 @@
+body {
+    font-family: 'Playfair Display', serif;
+    background-image: url('https://i.pinimg.com/736x/c1/2e/a2/c12ea23a27b351a23b55a91d272863c0.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background: #f99; */
+}
+
+h1 {
+    text-align: center;
+    margin: 2rem;
+    color: #f71d0d;
+    font-size: 50px;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0, 0.46);
+}
+h2 {
+  text-align: center;
+  margin: 2rem;
+  color: #000000;
+  font-size: 20px;
+}

@@ -1,0 +1,36 @@
+body {
+    font-family: 'Playfair Display', serif;
+
+    background-image: url('https://teterete.com/mx/wp-content/uploads/2021/09/textil-otomi-para-pared.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background: #f99; */
+}
+
+h1 {
+    text-align: center;
+    margin: 2rem;
+    color: #634261;
+    font-size: 80px;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0, 0.46);
+    background-color: #d2ebee;
+  padding: 1.5rem 1rem;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.volver {
+    padding: 40px 80px;
+    background-color: #70bec9;
+    color: #634261;
+    font-size: 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .volver:hover {
+    background-color: #09ee96;
+  }
+  .volver:active {
+    background-color: #d80b0b;
+  }

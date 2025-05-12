@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/admin.css">
+    <title>Grados y Grupos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        select, table, button {
+            margin-top: 20px;
+            width: 100%;
+            max-width: 600px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        button {
+            padding: 10px 15px;
+            border: none;
+            color: rgb(4, 1, 15); 
+            cursor: pointer;
+            margin: 5px 0;
+        }
+        button.add {
+            background-color: #186b2b;
+    padding: 20px 30px;
+    color: rgb(226, 212, 212);
+    font-family: 'Pacifico', cursive;
+    font-size: 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+        button.logout {
+            background-color:hwb(117 6% 66% / 0.94);
+            padding: 20px 30px;
+    color: rgb(219, 212, 212);
+    font-family: 'Pacifico', cursive;
+    font-size: 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+        }
+        button.modify {
+            background-color: #828a0f;
+        }
+        button.delete {
+            background-color: #8f2e38;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        #edit-form, #add-form {
+            display: none;
+            margin-top: 20px;
+            border: 1px solid #070707;
+            padding: 20px;
+            max-width: 600px;
+            background-color: rgba(204, 204, 204, 0.5); /* Fondo gris con 50% de transparencia */
+        }
+    </style>
+</head>
+<body><div style="text-align: center;">
+    <h1>Bienvenid@</h1></div>
+    <button class="add" onclick="showAddForm()">Agregar Usuario</button>
+    <button class="logout" onclick="logout()">Cerrar Sesión</button>
+    <br><br>
+    <h2><label for="group-select">Selecciona un grado y grupo:</label></h2>
+    <select id="group-select" onchange="fetchStudents()">
+        <option value="">Seleccione...</option>
+        <option value="1 A">1 A</option>
+        <option value="2 A">2 A</option>
+        <option value="3 A">3 A</option>
+        <option value="4 A">4 A</option>
+        <option value="4 B">4 B</option>
+        <option value="5 A">5 A</option>
+        <option value="6 A">6 A</option>
+        <option value="6 B">6 B</option>
+    </select>
+
+    <div id="student-table"></div>
+
+    <!-- Formulario para agregar un usuario -->
+    <div id="add-form">
+        <h2>Agregar Usuario</h2>
+        <form id="add-student-form" onsubmit="submitAdd(event)">
+            <label for="add-nombre">Nombre:</label><br>
+            <input type="text" id="add-nombre" required><br><br>
+            <label for="add-edad">Edad:</label><br>
+            <input type="number" id="add-edad" min="1" max="100" required><br><br>
+            <label for="add-grado">Grado:</label><br>
+            <input type="text" id="add-grado" required><br><br>
+            <label for="add-grupo">Grupo:</label><br>
+            <input type="text" id="add-grupo" required><br><br>
+            <input type="hidden" id="selected-group" value="">
+            <button type="submit">Agregar</button>
+            <button type="button" onclick="cancelAdd()">Cancelar</button>
+        </form>
+    </div>
+
+    <!-- Formulario para editar un usuario -->
+    <div id="edit-form">
+        <h2>Editar Usuario</h2>
+        <form id="edit-student-form" onsubmit="submitEdit(event)">
+            <input type="hidden" id="edit-id">
+            <label for="edit-nombre">Nombre:</label><br>
+            <input type="text" id="edit-nombre" required><br><br>
+            <label for="edit-edad">Edad:</label><br>
+            <input type="number" id="edit-edad" min="1" max="100" required><br><br>
+            <label for="edit-grado">Grado:</label><br>
+            <input type="text" id="edit-grado" required><br><br>
+            <label for="edit-grupo">Grupo:</label><br>
+            <input type="text" id="edit-grupo" required><br><br>
+            <button type="submit">Actualizar</button>
+            <button type="button" onclick="cancelEdit()">Cancelar</button>
+        </form>
+    </div>
+
+    <script>
+        function fetchStudents() {
+            const group = document.getElementById('group-select').value;
+            if (group) {
+                fetch(`fetch_students.php?group=${encodeURIComponent(group)}`)
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('student-table').innerHTML = data;
+                    });
+            } else {
+                document.getElementById('student-table').innerHTML = '';
+            }
+        }
+
+        function showAddForm() {
+            document.getElementById('add-form').style.display = 'block';
+        }
+
+        function cancelAdd() {
+            document.getElementById('add-form').style.display = 'none';
+        }
+
+        function submitAdd(event) {
+            event.preventDefault();
+
+            const nombre = document.getElementById('add-nombre').value;
+            const edad = document.getElementById('add-edad').value;
+            const grado = document.getElementById('add-grado').value;
+            const grupo = document.getElementById('add-grupo').value;
+            const selectedGroup = document.getElementById('group-select').value;
+
+            document.getElementById('selected-group').value = selectedGroup;
+
+            fetch('add_student.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ nombre, edad, grado, grupo, selectedGroup })
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert(data);
+                document.getElementById('add-form').style.display = 'none';
+                fetchStudents();
+            });
+        }
+
+        function editStudent(id, nombre, edad, grado, grupo) {
+            document.getElementById('edit-id').value = id;
+            document.getElementById('edit-nombre').value = nombre;
+            document.getElementById('edit-edad').value = edad;
+            document.getElementById('edit-grado').value = grado;
+            document.getElementById('edit-grupo').value = grupo;
+            document.getElementById('edit-form').style.display = 'block';
+        }
+
+        function cancelEdit() {
+            document.getElementById('edit-form').style.display = 'none';
+        }
+
+        function submitEdit(event) {
+            event.preventDefault();
+
+            const id = document.getElementById('edit-id').value;
+            const nombre = document.getElementById('edit-nombre').value;
+            const edad = document.getElementById('edit-edad').value;
+            const grado = document.getElementById('edit-grado').value;
+            const grupo = document.getElementById('edit-grupo').value;
+
+            fetch('edit_student.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ id, nombre, edad, grado, grupo })
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert(data);
+                document.getElementById('edit-form').style.display = 'none';
+                fetchStudents();
+            });
+        }
+
+        function deleteStudent(id) {
+            if (confirm('¿Estás seguro de eliminar este usuario?')) {
+                fetch('delete_student.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ id })
+                })
+                .then(response => response.text())
+                .then(data => {
+                    alert(data);
+                    fetchStudents();
+                });
+            }
+        }
+
+        function logout() {
+            if (confirm('¿Estás seguro de cerrar sesión?')) {
+                window.location.href = 'logout.php';
+            }
+        }
+    </script>
+</body>
+</html>

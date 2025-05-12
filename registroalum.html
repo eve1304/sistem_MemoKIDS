@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&family=Rubik+Doodle+Triangles&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/regalum.css">
+    <title>Formulario PHP</title>
+
+    <style>
+        body {
+            font-family: 'Cambria', sans-serif;
+            background-color: #f9f9f9;
+            color: #333; /* Cambiar el color de las letras */
+        }
+
+        form {
+            margin-top: 50px;
+        }
+
+        label {
+            text-align: center;
+  margin: 2rem auto;
+  color: #0c0c0c;
+  font-size: 20px;
+  font-family: 'Bangers', cursive;
+  background-color: rgba(69, 237, 243, 0.3); /* amarillo claro con 30% de opacidad */
+  padding: 0.2rem 1rem;
+border-radius: 5px;
+display: inline-block;
+}
+
+        .volver1 {
+            color: white; /* Color de texto del botón volver */
+            background-color: #3c5066; /* Fondo azul para el botón */
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .volver1:hover {
+            background-color: #0056b3; /* Fondo más oscuro al pasar el cursor */
+        }
+    </style>
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <h1>Registro de Alumnos...</h1>
+        <form id="alumnoForm">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required><br><br>
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" name="edad" required><br><br>
+            <label for="grado">Grado:</label>
+            <input type="number" id="grado" name="grado" required><br><br>
+            <label for="grupo">Grupo:</label>
+            <input type="text" id="grupo" name="grupo" required><br><br>
+            <button type="submit" class="btn btn-success">Enviar</button>
+        </form>
+    </div>
+
+    <script>
+        // Manejar el envío del formulario con AJAX
+        $(document).ready(function () {
+            $("#alumnoForm").submit(function (e) {
+                e.preventDefault(); // Evitar la recarga de la página
+                
+                // Serializar datos del formulario
+                var datos = $(this).serialize();
+                
+                // Enviar datos mediante AJAX
+                $.ajax({
+                    url: "recibir.php",
+                    type: "POST",
+                    data: datos,
+                    success: function (response) {
+                        // Mostrar el mensaje de éxito
+                        swal("¡Éxito!", response, "success");
+
+                        // Limpiar el formulario
+                        $("#alumnoForm")[0].reset();
+                    },
+                    error: function () {
+                        swal("Error", "Ocurrió un problema al enviar los datos", "error");
+                    }
+                });
+            });
+        });
+    </script>
+    <br><div style="text-align: center;">
+    <a href=".\sesionusuario.html">
+        <button class="volver1">Volver</button>
+      </a></div>
+</body>
+
+</html>

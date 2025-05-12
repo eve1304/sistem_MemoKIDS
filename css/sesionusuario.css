@@ -1,0 +1,72 @@
+body {
+    font-family: 'Playfair Display', serif;
+    background-image: url('https://us.123rf.com/450wm/wildrabbit/wildrabbit1802/wildrabbit180200072/95370926-vector-ilustraci%C3%B3n-de-patr%C3%B3n-de-bordado-de-estilo-otomi-mexicano-popular.jpg?ver=6');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background: #f99; */
+}
+
+h1 {
+    text-align: center;
+    margin: 2rem auto;
+    color: #5c1234;
+    font-size: 40px;
+    font-family: 'Bangers', cursive;
+   background-color: rgba(139, 230, 233, 0.3); /* amarillo claro con 30% de opacidad */
+  padding: 0.2rem 1rem;
+  border-radius: 2px;
+  display: inline-block;
+}
+h2 {
+  text-align: center;
+  margin: 2rem;
+  color: #5c1234;
+  font-size: 40px;
+   background-color: rgba(139, 230, 233, 0.3); /* amarillo claro con 30% de opacidad */
+  padding: 0.2rem 1rem;
+  border-radius: 2px;
+  display: inline-block;
+}
+h3 {
+  text-align: center;
+  margin: 2rem;
+  color: #5c1234;
+  font-size: 30px;
+background-color: rgba(139, 230, 233, 0.3); /* amarillo claro con 30% de opacidad */
+padding: 0.2rem 1rem;
+border-radius: 5px;
+display: inline-block;
+}
+.iniciar {
+  padding: 20px 30px;
+  background-color: #2b8b43;
+  color: rgb(8, 8, 8);
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.registro{
+  padding: 20px 30px;
+  background-color: #2b8b43;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.volver{
+  padding: 20px 30px;
+  background-color: #2b8b43;
+  color: rgb(7, 7, 7);
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+  .volver:hover {
+    background-color: #177703;
+  }
+  .volver:active {
+    background-color: #c309c9;
+  }

@@ -1,0 +1,33 @@
+body {
+  font-family: 'Playfair Display', serif;
+  background-image: url('https://teterete.com/mx/wp-content/uploads/2021/09/textil-para-pared-768x768.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background: #f99; */
+}
+.enviar {
+  padding: 50px 60px;
+  color: white; /* Color de texto del botón volver */
+ background-color: #3c5066; /* Fondo azul para el botón */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.enviar:hover {
+  background-color: #d80e0e;
+}
+.enviar:active {
+  background-color: #2348c2;
+}
+
+h1 {
+  text-align: center;
+  margin: 2rem auto;
+  color: #0a0a0a;
+  font-size: 30px;
+  font-family: 'Bangers', cursive;
+  background-color: rgba(69, 237, 243, 0.3); /* amarillo claro con 30% de opacidad */
+  padding: 0.2rem 1rem;
+  border-radius: 5px;
+  display: inline-block;
+}
